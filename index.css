@@ -1,0 +1,224 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-decoration: none;
+        transition: all ease-in .2s;
+    }
+
+    body {
+        background-color: #000000;
+        /* border: 1px solid blue; */
+        /* margin: 0 220px; */
+        max-width: 1200px;
+        min-height: 100vh;
+
+        margin: 0 auto; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0 0 0;
+    }
+
+    header .right-nav {
+        display: flex;
+        align-items: center;
+        gap: 1.5em;
+    }
+
+    header .right-nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    header .right-nav ul li a {
+        margin: 0 10px;
+        text-align: center;
+        display: inline-block; 
+        color: white;   
+        line-height: 1.5;
+    }
+
+    header .left-nav {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    header .left-nav .menu {
+        display: none;
+    }
+
+    header .left-nav input{
+        height: 35px;
+        width: 190px;
+        padding: 0 0 0 15px;
+        border: 0;
+    }
+
+    header .left-nav input:focus {
+        outline: none;
+    }
+
+    header .left-nav img {
+        height: 20px;
+        width: 20px;
+        opacity: .5;
+    }
+
+    main {
+        margin: 20px 0 0 0;
+        color: white;
+    }
+
+    main #latest {
+        margin: 0 0 25px 0;
+        font-size: 30px;
+    }
+    main section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    main section .header {
+        height: 200px;
+        overflow: hidden;
+        /* border: 1px solid red; */
+
+        position: relative;
+        background-color: black;
+        
+    }
+
+    main section .header img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+
+        opacity: .5;
+    }
+
+    main section .header .title {
+        width: 100%;
+        height: 40px;
+        bottom: 0;
+        padding: 0 10px;
+
+        position: absolute;
+        color: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 14px;
+    }
+
+    main section .header .play {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all ease-in .2s;
+        opacity: 0; 
+        margin-top: 30px;
+    }
+
+    main section .header .play img {
+        height: 80px;
+        width: 80px;
+    }
+
+    main section .header:hover .play{
+        opacity: 1; 
+        margin-top: 0px;
+    }
+
+    main section .header:hover img {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    footer {
+        margin: 30px 0 50px 0;
+        color: white;
+        /* border: 1px solid red; */
+
+        display: flex;
+        justify-content: center;
+    }
+
+    footer .header {
+        display: flex;
+        gap: 1px;   
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    footer .header div {
+        color: rgb(255, 76, 106);
+        background: rgb(54, 54, 54);
+        padding: 8px;
+        width: 30px;
+        text-align: center;
+    }
+
+    footer .header div:nth-child(3) {
+        background-color: rgb(255, 76, 106);   
+        color: white;
+    }
+
+    @media (max-width: 870px){
+        main section {
+            grid-template-columns: repeat(1, 1fr);
+            margin: 0 20px;
+        }
+
+        main #latest {
+            margin: 0 20px;
+        }
+
+        header .right-nav {
+            margin: 0 20px;
+        }
+
+        header nav {
+            display: none;
+        }
+
+        header .left-nav img, input {
+            display: none;
+        }
+
+        header .left-nav {
+            margin: 0 20px 0 0;
+            background-color: black;
+        }
+
+        header .left-nav .menu {
+            display: block;
+        }
+
+        header .left-nav .menu .burger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        header .left-nav .menu .burger div {
+            height: 2px;
+            width:30px;
+            background-color: white;
+        }
+    }
